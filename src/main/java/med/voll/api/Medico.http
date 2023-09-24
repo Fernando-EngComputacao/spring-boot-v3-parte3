@@ -10,6 +10,9 @@ GET http://localhost:1010/doctor?sort=nome,desc
 ### GET MED WITH ATIVO TRUE [logical delete]
 GET http://localhost:1010/doctor/status
 
+### GET MED WITH ID
+GET http://localhost:1010/doctor/5
+
 ### POST MED
 POST http://localhost:1010/doctor/search
 Accept: application/json
