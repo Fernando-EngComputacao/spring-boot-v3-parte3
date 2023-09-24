@@ -40,11 +40,11 @@ Content-Type: application/json
 
 {
   "id": "4",
-  "nome": "Bruno"
+  "nome": "Bruno Lucas"
 }
 
 ### DELETE MED
 DELETE http://localhost:1010/doctor/1
 
 ### LOGICAL DELETE MED
-DELETE http://localhost:1010/doctor/logical/5
+DELETE http://localhost:1010/doctor/logical/6
