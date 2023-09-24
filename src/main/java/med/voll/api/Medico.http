@@ -1,0 +1,50 @@
+### GET MED NORMAL
+GET http://localhost:1010/doctor
+
+### GET MED PAGEABLE
+GET http://localhost:1010/doctor?size=1&page=1
+
+### GET MED PAGEABLE SORT DECRESCENT
+GET http://localhost:1010/doctor?sort=nome,desc
+
+### GET MED WITH ATIVO TRUE [logical delete]
+GET http://localhost:1010/doctor/status
+
+### POST MED
+POST http://localhost:1010/doctor/search
+Accept: application/json
+Content-Type: application/json
+
+{
+  "nome": "Fernando Furtado",
+  "email": "fernando.furtado@gmail.com",
+  "crm": "457895",
+  "telefone": "(62) 9 9563-1247",
+  "especialidade": "GINECOLOGIA",
+  "endereco": {
+    "logradouro": "Rua a",
+    "bairro": "Setor Cristina II Expansão",
+    "cep": "75389328",
+    "cidade": "Trindade",
+    "uf": "GO",
+    "numero": "4",
+    "complemento": "casa"
+  }
+}
+
+
+### PUT MED
+PUT http://localhost:1010/doctor
+Accept: application/json
+Content-Type: application/json
+
+{
+  "id": "4",
+  "nome": "Bruno"
+}
+
+### DELETE MED
+DELETE http://localhost:1010/doctor/1
+
+### LOGICAL DELETE MED
+DELETE http://localhost:1010/doctor/logical/5
