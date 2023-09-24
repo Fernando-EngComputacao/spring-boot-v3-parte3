@@ -1,7 +1,10 @@
-package med.voll.api.controller;
+package med.voll.api.assets.controller;
 
 import jakarta.validation.Valid;
-import med.voll.api.medico.*;
+import med.voll.api.assets.repository.MedicoRepository;
+import med.voll.api.domain.medico.*;
+import med.voll.api.domain.medico.input.*;
+import med.voll.api.domain.medico.output.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,7 +12,6 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.util.UriBuilder;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
@@ -43,7 +45,7 @@ public class MedicoController {
     @GetMapping("/{id}")
     public ResponseEntity findAll(@PathVariable Long id, @PageableDefault(size = 10, sort = {"nome"}) Pageable page) {
         Medico medico = repository.getReferenceById(id);
-        return ResponseEntity.ok(new DadosListagemMedico(medico));
+        return ResponseEntity.ok(new DadosDetalhamentoMedico(medico));
     }
 
     @PutMapping

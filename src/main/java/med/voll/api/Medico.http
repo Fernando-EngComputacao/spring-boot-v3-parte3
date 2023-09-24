@@ -11,7 +11,7 @@ GET http://localhost:1010/doctor?sort=nome,desc
 GET http://localhost:1010/doctor/status
 
 ### GET MED WITH ID
-GET http://localhost:1010/doctor/5
+GET http://localhost:1010/doctor/50
 
 ### POST MED
 POST http://localhost:1010/doctor/search

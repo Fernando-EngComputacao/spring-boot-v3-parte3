@@ -1,8 +1,7 @@
-package med.voll.api.paciente;
+package med.voll.api.domain.paciente.output;
 
-import jakarta.persistence.Embedded;
-import med.voll.api.endereco.Endereco;
-import med.voll.api.medico.Medico;
+import med.voll.api.domain.endereco.Endereco;
+import med.voll.api.domain.paciente.Paciente;
 
 public record DadosDetalhamentoPaciente(
     Long id,
