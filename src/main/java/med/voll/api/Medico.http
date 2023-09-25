@@ -19,19 +19,19 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "nome": "Fernando Furtado",
-  "email": "fernando.furtado@gmail.com",
-  "crm": "457895",
-  "telefone": "(62) 9 9563-1247",
-  "especialidade": "GINECOLOGIA",
-  "endereco": {
-    "logradouro": "Rua a",
-    "bairro": "Setor Cristina II Expansão",
+  "name": "Fernando Carrilho",
+  "email": "fernando.carrilho@gmail.com",
+  "crm": "457315",
+  "telephone": "(62) 9 9563-1247",
+  "specialty": "GINECOLOGIA",
+  "address": {
+    "place": "Rua a",
+    "neighborhood": "Setor Cristina II Expansão",
     "cep": "75389328",
-    "cidade": "Trindade",
+    "city": "Trindade",
     "uf": "GO",
-    "numero": "4",
-    "complemento": "casa"
+    "number": "4",
+    "complement": "casa"
   }
 }
 
@@ -43,11 +43,11 @@ Content-Type: application/json
 
 {
   "id": "4",
-  "nome": "Bruno Lucas"
+  "name": "Bruno Lucas"
 }
 
 ### DELETE MED
 DELETE http://localhost:1010/doctor/1
 
 ### LOGICAL DELETE MED
-DELETE http://localhost:1010/doctor/logical/6
+DELETE http://localhost:1010/doctor/logical/4

@@ -2,9 +2,9 @@ package med.voll.api.assets.controller;
 
 import jakarta.validation.Valid;
 import med.voll.api.assets.repository.MedicoRepository;
-import med.voll.api.domain.medico.*;
-import med.voll.api.domain.medico.input.*;
-import med.voll.api.domain.medico.output.*;
+import med.voll.api.domain.doctor.*;
+import med.voll.api.domain.doctor.input.*;
+import med.voll.api.domain.doctor.output.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -25,35 +25,35 @@ public class MedicoController {
 
     @PostMapping("/search")
     @Transactional
-    public ResponseEntity cadastrar(@RequestBody @Valid DadosCadastroMedico dados, UriComponentsBuilder uriBuilder) {
-        Medico medico = new Medico(dados);
-        repository.save(medico);
-        URI uri = uriBuilder.path("/doctor/search/{id}").buildAndExpand(medico.getId()).toUri();
-        return ResponseEntity.created(uri).body(new DadosDetalhamentoMedico(medico));
+    public ResponseEntity cadastrar(@RequestBody @Valid DoctorRegisterData dados, UriComponentsBuilder uriBuilder) {
+        Doctor doctor = new Doctor(dados);
+        repository.save(doctor);
+        URI uri = uriBuilder.path("/doctor/search/{id}").buildAndExpand(doctor.getId()).toUri();
+        return ResponseEntity.created(uri).body(new DoctorDetailsData(doctor));
     }
 
     @GetMapping("/status")
-    public ResponseEntity<Page<DadosListagemMedico>> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
-        return ResponseEntity.ok(repository.findAllByAtivoTrue(paginacao).map(DadosListagemMedico::new));
+    public ResponseEntity<Page<DoctorAllData>> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable page) {
+        return ResponseEntity.ok(repository.findAllByActiveTrue(page).map(DoctorAllData::new));
     }
 
     @GetMapping
-    public ResponseEntity<Page<DadosListagemMedico>> listById(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
-        return ResponseEntity.ok(repository.findAllByAtivoTrue(paginacao).map(DadosListagemMedico::new));
+    public ResponseEntity<Page<DoctorAllData>> listById(@PageableDefault(size = 10, sort = {"nome"}) Pageable page) {
+        return ResponseEntity.ok(repository.findAllByActiveTrue(page).map(DoctorAllData::new));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity findAll(@PathVariable Long id, @PageableDefault(size = 10, sort = {"nome"}) Pageable page) {
-        Medico medico = repository.getReferenceById(id);
-        return ResponseEntity.ok(new DadosDetalhamentoMedico(medico));
+        Doctor doctor = repository.getReferenceById(id);
+        return ResponseEntity.ok(new DoctorDetailsData(doctor));
     }
 
     @PutMapping
     @Transactional
-    public ResponseEntity atualizar(@RequestBody @Valid DadosAtualizacaoMedico dados) {
-        Medico medico = repository.getReferenceById(dados.id());
-        medico.atualizarInformacoes(dados);
-        return ResponseEntity.ok(new DadosDetalhamentoMedico(medico));
+    public ResponseEntity update(@RequestBody @Valid DoctorUpdateData dados) {
+        Doctor doctor = repository.getReferenceById(dados.id());
+        doctor.updateInformations(dados);
+        return ResponseEntity.ok(new DoctorDetailsData(doctor));
     }
 
     @DeleteMapping("/{id}")
