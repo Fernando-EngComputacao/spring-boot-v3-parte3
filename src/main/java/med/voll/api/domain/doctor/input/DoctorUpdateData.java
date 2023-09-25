@@ -6,7 +6,7 @@ import med.voll.api.domain.address.AddressData;
 public record DoctorUpdateData(
         @NotNull
         Long id,
-        String nome,
-        String telefone,
-        AddressData endereco) {
+        String name,
+        String telephone,
+        AddressData address) {
 }

@@ -36,23 +36,23 @@ public class Doctor {
 
     public Doctor(DoctorRegisterData dados) {
         this.active = true;
-        this.name = dados.nome();
+        this.name = dados.name();
         this.email = dados.email();
-        this.telephone = dados.telefone();
+        this.telephone = dados.telephone();
         this.crm = dados.crm();
         this.specialty = dados.specialty();
-        this.address = new Address(dados.endereco());
+        this.address = new Address(dados.address());
     }
 
     public void updateInformations(DoctorUpdateData dados) {
-        if (dados.nome() != null) {
-            this.name = dados.nome();
+        if (dados.name() != null) {
+            this.name = dados.name();
         }
-        if (dados.telefone() != null) {
-            this.telephone = dados.telefone();
+        if (dados.telephone() != null) {
+            this.telephone = dados.telephone();
         }
-        if (dados.endereco() != null) {
-            this.address.updateInfo(dados.endereco());
+        if (dados.address() != null) {
+            this.address.updateInfo(dados.address());
         }
 
     }

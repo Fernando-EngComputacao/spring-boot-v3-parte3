@@ -6,7 +6,7 @@ import med.voll.api.domain.doctor.Doctor;
 
 public record DoctorDetailsData(
         Long id,
-        String nome,
+        String name,
         String email,
         String crm,
         Specialty specialty,

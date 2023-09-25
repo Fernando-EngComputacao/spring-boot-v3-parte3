@@ -10,18 +10,18 @@ import med.voll.api.domain.doctor.Specialty;
 
 public record DoctorRegisterData(
         @NotBlank
-        String nome,
+        String name,
         @NotBlank
         @Email
         String email,
 
         @NotBlank
-        String telefone,
+        String telephone,
         @NotBlank
         @Pattern(regexp = "\\d{4,6}")
         String crm,
         @NotNull
         Specialty specialty,
 
-        @NotNull @Valid AddressData endereco) {
+        @NotNull @Valid AddressData address) {
 }
