@@ -1,4 +1,4 @@
-package med.voll.api.infra.error;
+package med.voll.api.infra.exception;
 
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.ResponseEntity;
@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @RestControllerAdvice
 public class ExceptionError {

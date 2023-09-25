@@ -49,11 +49,19 @@
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-mysql</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>com.mysql</groupId>
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -76,6 +84,16 @@
 					</excludes>
 				</configuration>
 			</plugin>
+<!--			<plugin>-->
+<!--				<groupId>org.flywaydb</groupId>-->
+<!--				<artifactId>flyway-maven-plugin</artifactId>-->
+<!--				<version>9.16.3</version>-->
+<!--				<configuration>-->
+<!--					<url>jdbc:mysql://localhost:3306/vollmed_api</url>-->
+<!--					<user>root</user>-->
+<!--					<password>root</password>-->
+<!--				</configuration>-->
+<!--			</plugin>-->
 		</plugins>
 	</build>
 
