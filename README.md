@@ -10,10 +10,19 @@ Enquanto um time de desenvolvimento será responsável pelo aplicativo mobile, o
 
 - [x] CRUD de médicos;
 - [x] CRUD de pacientes;
-- [ ] Agendamento de consultas(em breve);
-- [ ] Cancelamento de consultas(em breve);
+- [x] Agendamento de consultas(em breve);
+- [x] Cancelamento de consultas(em breve);
 
----
+
+## :1st_place_medal: Envolvimento do curso
+ - [x] Isolagem dos códigos nas regras de negócio na aplicação;
+ - [x] Implementação dos princípios SOLID;
+ - [x] Documentação da API que segue o padrão OpenAPI;
+ - [x] Testagem automática testes na aplicação com Spring Boot 3;
+ - [x] Realização de build da aplicação com Spring Boot 3;
+ - [x] Utilização de  variáveis de ambiente;
+ - [x] Atuação da aplicação para o deploy;
+--- 
 
 ## 🎨 Layout
 
