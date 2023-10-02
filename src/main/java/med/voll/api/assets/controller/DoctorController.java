@@ -21,7 +21,7 @@ import java.net.URI;
 @RestController
 @RequestMapping("/doctor")
 @EnableMethodSecurity(securedEnabled = true)
-public class MedicoController {
+public class DoctorController {
 
     @Autowired
     private MedicoRepository repository;
