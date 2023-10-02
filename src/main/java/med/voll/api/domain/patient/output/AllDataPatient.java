@@ -8,7 +8,7 @@ public record AllDataPatient(
     String name,
     String email,
 
-    String telefone,
+    String telephone,
 
     String cpf,
 
