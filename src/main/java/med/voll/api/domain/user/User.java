@@ -12,8 +12,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.List;
 
-@Table(name = "usuarios")
-@Entity(name = "usuario")
+@Table(name = "users")
+@Entity(name = "user")
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -31,12 +31,12 @@ public class User implements UserDetails {
 
     @Override
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     @Override
     public String getUsername() {
-        return username;
+        return this.username;
     }
 
     @Override
