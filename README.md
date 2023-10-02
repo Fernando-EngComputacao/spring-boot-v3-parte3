@@ -13,6 +13,7 @@ Enquanto um time de desenvolvimento será responsável pelo aplicativo mobile, o
 - [x] Agendamento de consultas(em breve);
 - [x] Cancelamento de consultas(em breve);
 
+---
 
 ## :1st_place_medal: Envolvimento do curso
  - [x] Isolagem dos códigos nas regras de negócio na aplicação;
