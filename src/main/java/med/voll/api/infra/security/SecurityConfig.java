@@ -32,6 +32,8 @@ public class SecurityConfig {
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeRequests()
                 .requestMatchers(HttpMethod.POST,"/auth").permitAll()
+                .requestMatchers(HttpMethod.DELETE, "/doctor").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.DELETE, "/patient").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and().addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
