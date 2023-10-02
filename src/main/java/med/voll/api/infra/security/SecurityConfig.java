@@ -19,23 +19,17 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        SecurityFilterChain security =  http.csrf(csrf -> csrf.disable())
+        return  http.csrf(csrf -> csrf.disable())
                 .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .build();
-        log.info("\n**[SECURITY-FILTER-CHAIN] {}", security);
-        return security;
     }
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration configuration) throws Exception {
-        AuthenticationManager config = configuration.getAuthenticationManager();
-        log.info("\n**[AUTHENTICATION-MANAGER] {}", config.toString());
-        return config;
+        return configuration.getAuthenticationManager();
     }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        var pass = new BCryptPasswordEncoder();
-        log.info("\n**[PASSWORD-ENCODER] {}", pass);
-        return pass;
+        return new BCryptPasswordEncoder();
     }
 }
