@@ -15,7 +15,7 @@ Enquanto um time de desenvolvimento será responsável pelo aplicativo mobile, o
 
 ---
 
-## :1st_place_medal: Envolvimento do curso
+## :1st_place_medal: Envolvimento do projeto
  - [x] Isolagem dos códigos nas regras de negócio na aplicação;
  - [x] Implementação dos princípios SOLID;
  - [x] Documentação da API que segue o padrão OpenAPI;
