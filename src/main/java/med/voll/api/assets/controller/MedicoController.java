@@ -33,17 +33,17 @@ public class MedicoController {
     }
 
     @GetMapping("/status")
-    public ResponseEntity<Page<DoctorAllData>> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable page) {
+    public ResponseEntity<Page<DoctorAllData>> listar(@PageableDefault(size = 10, sort = {"name"}) Pageable page) {
         return ResponseEntity.ok(repository.findAllByActiveTrue(page).map(DoctorAllData::new));
     }
 
     @GetMapping
-    public ResponseEntity<Page<DoctorAllData>> listById(@PageableDefault(size = 10, sort = {"nome"}) Pageable page) {
+    public ResponseEntity<Page<DoctorAllData>> listById(@PageableDefault(size = 10, sort = {"name"}) Pageable page) {
         return ResponseEntity.ok(repository.findAllByActiveTrue(page).map(DoctorAllData::new));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity findAll(@PathVariable Long id, @PageableDefault(size = 10, sort = {"nome"}) Pageable page) {
+    public ResponseEntity findAll(@PathVariable Long id, @PageableDefault(size = 10, sort = {"name"}) Pageable page) {
         Doctor doctor = repository.getReferenceById(id);
         return ResponseEntity.ok(new DoctorDetailsData(doctor));
     }

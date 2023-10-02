@@ -5,6 +5,8 @@ import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import lombok.extern.slf4j.Slf4j;
 import med.voll.api.domain.user.User;
+import med.voll.api.infra.config.ValuesConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -15,10 +17,12 @@ import java.util.Date;
 @Slf4j
 @Service
 public class TokenService {
+    @Autowired
+    private ValuesConfig values;
 
     public String generateToken(User user) {
         try {
-            Algorithm algorithm = Algorithm.HMAC256("123456890");
+            Algorithm algorithm = Algorithm.HMAC256(values.getUrlSecret());
             return JWT.create()
                     .withIssuer("API DOCTOR")
                     .withSubject(user.getUsername())

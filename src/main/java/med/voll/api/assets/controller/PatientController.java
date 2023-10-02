@@ -34,7 +34,7 @@ public class PatientController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<DataListPatient>> findAll(@PageableDefault(size = 10, sort = {"nome"}) Pageable page) {
+    public ResponseEntity<Page<DataListPatient>> findAll(@PageableDefault(size = 10, sort = {"name"}) Pageable page) {
         var pageable = repository.findAllByActiveTrue(page).map(DataListPatient::new);
         return ResponseEntity.ok(pageable);
     }

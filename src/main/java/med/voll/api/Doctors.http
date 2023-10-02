@@ -5,7 +5,7 @@ GET http://localhost:1010/doctor
 GET http://localhost:1010/doctor?size=1&page=1
 
 ### GET MED PAGEABLE SORT DECRESCENT
-GET http://localhost:1010/doctor?sort=nome,desc
+GET http://localhost:1010/doctor?sort=name,desc
 
 ### GET MED WITH ATIVO TRUE [logical delete]
 GET http://localhost:1010/doctor/status

@@ -5,7 +5,7 @@ import med.voll.api.domain.patient.Patient;
 
 public record AllDataPatient(
     Long id,
-    String nome,
+    String name,
     String email,
 
     String telefone,

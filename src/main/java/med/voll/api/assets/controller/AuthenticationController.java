@@ -2,6 +2,7 @@ package med.voll.api.assets.controller;
 
 import jakarta.validation.Valid;
 import med.voll.api.assets.service.TokenService;
+import med.voll.api.domain.security.DataTokenJWT;
 import med.voll.api.domain.user.AuthenticationData;
 import med.voll.api.domain.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +25,11 @@ public class AuthenticationController {
 
     @PostMapping
     public ResponseEntity efetuarLogin(@RequestBody @Valid AuthenticationData data) {
-        var token = new UsernamePasswordAuthenticationToken(data.username(), data.password());
-        var authentication = manager.authenticate(token);
+        var tokenAuthenticationToken = new UsernamePasswordAuthenticationToken(data.username(), data.password());
+        var authentication = manager.authenticate(tokenAuthenticationToken);
+        var tokenJWT = tokenService.generateToken((User) authentication.getPrincipal());
 
-        return ResponseEntity.ok(tokenService.generateToken((User) authentication.getPrincipal()));
+        return ResponseEntity.ok(new DataTokenJWT(tokenJWT));
     }
 
 }
