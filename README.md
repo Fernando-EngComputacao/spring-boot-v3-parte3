@@ -53,6 +53,6 @@ As seguintes tecnologias foram utilizadas no desenvolvimento da API Rest do proj
 
 ## 📝 Licença
 
-Estrutura do projeto elaborado por [Alura](https://www.alura.com.br) e construído por [Fernando Furtado](https://github.com/Fernando-EngComputacao/) em curso de Spring Boot.
+Estrutura do projeto desenhada pela [Alura](https://www.alura.com.br) e construído por [Fernando Furtado](https://github.com/Fernando-EngComputacao/) em curso de Spring Boot.
 
 ---
