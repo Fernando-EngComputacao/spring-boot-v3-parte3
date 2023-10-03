@@ -26,9 +26,7 @@ public class AppointmentController {
     @PostMapping()
     @Transactional
     public ResponseEntity schedule(@RequestBody @Valid AppointmentScheduleData data) {
-        log.info("\n**[APPOINTMENT-CONTROLLER] {}",data);
-        service.schedule(data);
-        return ResponseEntity.ok(new AppointmentDetailsData(null, null, null, null));
+        return ResponseEntity.ok(service.schedule(data));
 
     }
 
