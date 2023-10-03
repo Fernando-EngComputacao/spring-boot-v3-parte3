@@ -1,5 +1,6 @@
 package med.voll.api.assets.repository;
 
+import jakarta.validation.constraints.Null;
 import med.voll.api.assets.entity.Doctor;
 import med.voll.api.assets.dto.doctor.Specialty;
 import org.springframework.data.domain.Page;
