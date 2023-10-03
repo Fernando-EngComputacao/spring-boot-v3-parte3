@@ -1,10 +1,12 @@
 package med.voll.api.assets.controller;
 
 import jakarta.validation.Valid;
-import med.voll.api.assets.repository.MedicoRepository;
-import med.voll.api.domain.doctor.*;
-import med.voll.api.domain.doctor.input.*;
-import med.voll.api.domain.doctor.output.*;
+import med.voll.api.assets.dto.doctor.input.DoctorRegisterData;
+import med.voll.api.assets.dto.doctor.input.DoctorUpdateData;
+import med.voll.api.assets.dto.doctor.output.DoctorAllData;
+import med.voll.api.assets.dto.doctor.output.DoctorDetailsData;
+import med.voll.api.assets.entity.Doctor;
+import med.voll.api.assets.repository.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -24,7 +26,7 @@ import java.net.URI;
 public class DoctorController {
 
     @Autowired
-    private MedicoRepository repository;
+    private DoctorRepository repository;
 
     @PostMapping("/search")
     @Transactional

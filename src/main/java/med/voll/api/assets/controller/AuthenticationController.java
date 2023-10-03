@@ -2,9 +2,9 @@ package med.voll.api.assets.controller;
 
 import jakarta.validation.Valid;
 import med.voll.api.assets.service.TokenService;
-import med.voll.api.domain.security.DataTokenJWT;
-import med.voll.api.domain.user.AuthenticationData;
-import med.voll.api.domain.user.User;
+import med.voll.api.assets.dto.security.DataTokenJWT;
+import med.voll.api.assets.dto.user.AuthenticationData;
+import med.voll.api.assets.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
