@@ -1,5 +1,6 @@
 package med.voll.api.assets.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import med.voll.api.assets.dto.doctor.input.DoctorRegisterData;
 import med.voll.api.assets.dto.doctor.input.DoctorUpdateData;
@@ -23,6 +24,7 @@ import java.net.URI;
 @RestController
 @RequestMapping("/doctor")
 @EnableMethodSecurity(securedEnabled = true)
+@SecurityRequirement(name = "bearer-key")
 public class DoctorController {
 
     @Autowired

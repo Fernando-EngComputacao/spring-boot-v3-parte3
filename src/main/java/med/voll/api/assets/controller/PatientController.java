@@ -1,5 +1,6 @@
 package med.voll.api.assets.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import med.voll.api.assets.dto.patient.output.AllDataPatient;
 import med.voll.api.assets.dto.patient.output.DataListPatient;
@@ -21,6 +22,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @RestController
 @RequestMapping("patient")
 @EnableMethodSecurity(securedEnabled = true)
+@SecurityRequirement(name = "bearer-key")
 public class PatientController {
 
     @Autowired

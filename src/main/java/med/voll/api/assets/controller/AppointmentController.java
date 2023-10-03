@@ -1,5 +1,6 @@
 package med.voll.api.assets.controller;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import med.voll.api.assets.service.AppointmentService;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/appointment")
 @EnableMethodSecurity(securedEnabled = true)
+@SecurityRequirement(name = "bearer-key")
 public class AppointmentController {
 
     @Autowired
