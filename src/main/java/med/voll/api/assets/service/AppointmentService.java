@@ -44,6 +44,10 @@ public class AppointmentService {
 
         //Check
         var chosenDoctor = chooseDoctor(data);
+        if (chosenDoctor == null) {
+            throw new ValidationException("No doctors available on this day for the chosen specialty!");
+        }
+
         var appointment = Appointment
                 .builder()
                 .id(null)

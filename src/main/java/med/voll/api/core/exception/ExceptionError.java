@@ -21,6 +21,11 @@ public class ExceptionError {
         return ResponseEntity.notFound().build();
     }
 
+    @ExceptionHandler(ValidationException.class)
+    public ResponseEntity businessRow(ValidationException ex) {
+        return ResponseEntity.badRequest().body(new DataValidationErrorMessage(ex.getMessage()) );
+    }
+
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity error400(MethodArgumentNotValidException ex) {
         List<FieldError> errors = ex.getFieldErrors();
@@ -60,6 +65,12 @@ public class ExceptionError {
     private record DataValidationError(String field, String message) {
         public DataValidationError(FieldError error) {
             this(error.getField(), error.getDefaultMessage());
+        }
+    }
+
+    private record DataValidationErrorMessage( String message) {
+        public DataValidationErrorMessage(FieldError error) {
+            this(error.getDefaultMessage());
         }
     }
 }
