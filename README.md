@@ -57,7 +57,7 @@ Estrutura do projeto desenhada pela [Alura](https://www.alura.com.br) e constru�
 
 ---
 ## :bookmark: Certificação
-° Certificado do Curso: **[Spring Boot 3: documente, teste e faça deploy](https://cursos.alura.com.br/certificate/6f077e71-f864-4681-9c54-47d6a02eba1a)**
+° Certificado do Curso: **[Spring Boot 3: documente, teste e faça deploy](https://cursos.alura.com.br/certificate/ace83159-452e-4449-826d-9de824d337ee)**
 
 ---
 
