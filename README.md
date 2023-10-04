@@ -64,8 +64,13 @@ Estrutura do projeto desenhada pela [Alura](https://www.alura.com.br) e constru�
 ## :arrows_clockwise: Adicionais:
 #### Deploy
 ###### - Código para rodar em produção, no servidor:
-    
-    $ java -Dspring.profiles.active=prod -jar <file-name.jar>
+
+    java -Dspring.profiles.active=<profile> -D<LocationNameVariable>=<value> -D<userNameVariable>=<value> -D<namePasswordVariable>=<value> -jar <file-name.jar>
+
+Exemplo: 
+
+    java -Dspring.profiles.active=prod -DDATASOURCE_URL=jdbc:mysql://localhost:vollmed_api -DDATASOURCE_USERNAME=root -DDATASOURCE_PASSWROD=root -jar code-0.0.1-SNAPSHOT.jar
+
 
 #### Jar
 
