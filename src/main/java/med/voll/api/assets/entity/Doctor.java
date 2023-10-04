@@ -1,10 +1,7 @@
 package med.voll.api.assets.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import med.voll.api.assets.dto.doctor.Specialty;
 import med.voll.api.assets.dto.doctor.input.DoctorUpdateData;
 import med.voll.api.assets.dto.doctor.input.DoctorRegisterData;
@@ -12,6 +9,7 @@ import med.voll.api.assets.dto.doctor.input.DoctorRegisterData;
 @Table(name = "doctors")
 @Entity(name = "doctor")
 @Getter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")

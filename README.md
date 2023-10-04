@@ -60,3 +60,14 @@ Estrutura do projeto desenhada pela [Alura](https://www.alura.com.br) e constru�
 ° Certificado do Curso: **[Spring Boot 3: documente, teste e faça deploy](https://cursos.alura.com.br/certificate/6f077e71-f864-4681-9c54-47d6a02eba1a)**
 
 ---
+
+## :arrows_clockwise: Adicionais:
+#### Deploy
+###### - Código para rodar em produção, no servidor:
+    
+    $ java -Dspring.profiles.active=prod -jar <file-name.jar>
+
+#### Jar
+
+###### - Para gerar o Jar no Maven, basta ir até **Maven>Lifecycle>package**. O Jar gerado pode ser encontrado na pasta **Target**>
+___
